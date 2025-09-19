@@ -46,7 +46,7 @@
 <body>
   <div class="container">
     <form>
-      <input type="text" placeholder="Search anything...">
+      <input type="search" placeholder="Search anything...">
       <button>Get Image</button>
     </form>
     <div class="result"></div>
@@ -84,7 +84,11 @@
 
     form.addEventListener("submit", function(e) {
       e.preventDefault();
-      getImage(input.value.trim());
+      const value = input.value.trim();
+      if (value) {
+        getImage(input.value.trim());
+      }
+      
     })
 
     getImage("cat");
